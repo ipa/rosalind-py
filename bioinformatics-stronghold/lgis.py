@@ -1,18 +1,34 @@
 
-n = 5
-str = "5 1 4 2 3"
-strarr = str.split(" ")
 
-digits = []
-lastindex = 0
+def patience_sort(data):
+    piles = []
+    last = None
+    for d in data:
+        if len(piles) == 0:
+            t = d, None
+            piles.append([t])
+            last = t
+        else:
+            t = d, last
+            placed = False
+            for i in range(len(piles)):
+                if piles[i][len(piles[i])-1][0] < d:
+                    piles[i].append(t)
+                    placed = True
+                    break
+            if not placed:
+                piles.append([t])
 
-for i in range(len(strarr)):
-    digit = int(strarr[i])
-    if digit == 1:
+            last = t
+
+    print (piles)
+
+    current = last
+    while current[1] is not None:
+        print(current[0])
+        current = current[1]
 
 
-    if digit > digits[len(digits)] and (i - lastindex) < digit:
-        digits.append(digit)
-        lastindex = i
+seq = [5, 1, 4, 2, 3]
 
-print(digits)
+patience_sort(seq)
