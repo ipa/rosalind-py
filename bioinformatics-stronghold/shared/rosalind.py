@@ -19,6 +19,8 @@ class Rosalind:
             else:
                 fasta.dna += line.replace("\n", "")
 
+        fastas.append(fasta)
+
         return fastas
 
 
