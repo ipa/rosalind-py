@@ -18,14 +18,12 @@ def issubstr(string, dnas):
             return False
     return True
 
-
-
-dnas = Rosalind.readFasta("input/lcsm.txt")
+dnas = Rosalind.readfasta("input/lcsm.txt")
 data = []
-for dna in dnas:
-    dna.print()
-    data.append(dna.dna)
 
+for dna in dnas:
+    dna.printfasta()
+    data.append(dna.dna)
 
 print("result:")
 print(longsubstr(data))

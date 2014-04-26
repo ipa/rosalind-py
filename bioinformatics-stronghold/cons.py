@@ -4,7 +4,7 @@ from shared.rosalind import Rosalind
 
 
 profile = ['A', 'C', 'G', 'T']
-dnas = Rosalind.readFasta("input/cons.txt")
+dnas = Rosalind.readfasta("input/cons.txt")
 
 m = len(dnas)
 n = len(dnas[0].dna)

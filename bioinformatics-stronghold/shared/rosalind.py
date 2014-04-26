@@ -1,11 +1,10 @@
-
-
 class Rosalind:
 
     def __init__(self):
         pass
 
-    def readFasta(filename):
+    @staticmethod
+    def readfasta(filename):
         f = open(filename, 'r')
         fastas = []
         fasta = None
@@ -31,5 +30,5 @@ class Fasta:
     def __init__(self):
         pass
 
-    def print(self):
+    def printfasta(self):
         print(self.id, self.dna)
